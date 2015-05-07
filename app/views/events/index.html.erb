@@ -1,0 +1,51 @@
+<table>
+	<tr>
+		<th>event_id</th>
+		<th>confirmed?</th>
+		<th>load time</th>
+		<th>doors time</th>
+		<th>show time</th>
+		<th>set time</th>
+		<th>tour id</th>
+		<th>food comp</th>
+		<th>drink comp</th>
+		<th>hotel comp</th>
+		<th>flat rate</th>
+		<th>door deal</th>
+		<th>door deal details</th>
+		<th>stay id</th>
+		<th>event notes</th>
+		<th>merch total</th>
+		<th>tips total</th>
+	</tr>
+	<% current_user.events.each do |event| %>
+	<tr>
+		<td><%= event.id %></td>
+		<td><%= event.venue_id %></td>
+    <td><%= event.date %></td>
+    <td><%= event.age_min %></td>
+    <td><%= event.ticket_price_adv %></td>
+    <td><%= event.ticket_price_dos %></td>
+		
+		<% band_event = BandEvent.where(event_id: event.id, band_id: current_user.bands.first.id).first %>
+    <td><%= band_event.confirmed %></td>
+    <td><%= band_event.load_time %></td>
+    <td><%= band_event.doors_time %></td>
+    <td><%= band_event.show_time %></td>
+    <td><%= band_event.set_time %></td>
+    <td><%= band_event.tour_id %></td>
+    <td><%= band_event.food_comp %></td>
+    <td><%= band_event.drink_comp %></td>
+    <td><%= band_event.hotel_comp %></td>
+    <td><%= band_event.flat_rate %></td>
+    <td><%= band_event.door_deal %></td>
+    <td><%= band_event.door_deal_details %></td>
+    <td><%= band_event.stay_id %></td>
+    <td><%= band_event.event_notes %></td>
+    <td><%= band_event.merch_total %></td>
+    <td><%= band_event.tips_total %></td>
+	</tr>
+	<% end %>
+</table>
+
+<%= link_to "export to CSV", '#' %> LOL jk

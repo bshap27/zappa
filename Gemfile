@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+# gem 'simpleform'
+gem 'omniauth-google-oauth2' #going to have to go through devise omniatuth. reference ctrlf to remember how we logged in with github and whether we had to download devise controllers/views to customize.
+gem 'google-api-client', :require => 'google/api_client'
+gem 'figaro'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'

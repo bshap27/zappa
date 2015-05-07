@@ -1,0 +1,11 @@
+<img src="<%= asset_path current_user.bands.first.image_url %>" width="300px">
+<div class="btn btn-primary">New Band Gig</div>
+<div class="btn btn-primary">New Band Practice</div>
+<div class="btn btn-primary">New Personal Event</div>
+
+<h3><%= current_user.first_name %>'s events</h3>
+<ol>
+	<% current_user.events.each do |event| %>
+		<li><%= event.date %>: <%= event.venue.name %></li>
+	<% end %>
+</ol>
